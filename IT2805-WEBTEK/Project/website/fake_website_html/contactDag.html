@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+        <link rel="stylesheet" href="css/fake_website.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <title>RakkestadFitness</title>
+    </head>
+    <body>
+        <header>
+            <nav id="fake_navbar">
+                <a class="fake_links" href="/website/index.html"><img id="fake_logo" src="images/fake_website/RakkestadLogo.png" alt="Rakkestad Logo"></a>
+                <a class="fake_links" href="diets.html">Diets</a>
+                <a class="fake_links" href="programs.html">Programs</a>
+                <a class="fake_links" href="store_fake.html">Store</a>
+                <a class="fake_links" href="contactDag.html">Contact Me! Pls</a>
+            </nav>
+        </header>
+        <div id="container">
+            <form id="form">
+                <label>Name:</label>
+                <input type="text" placeholder="YOUR BEAST NAME">
+                <br>
+                <label>Name again:</label>
+                <input type="text" placeholder=" I NEED YOUR NAME">
+                <br>
+                <label>Name (one last time):</label>
+                <input type="text" placeholder=" I NEED YOUR NAME ONCE MORE">
+                <br>
+                <label>Would you file a lawsuit against me if you we're to not get big?</label>
+                <input type="radio" name="lawsuit">Yes
+                <input type="radio" name="lawsuit">No
+                <br>
+                <input type="submit" id="submit" value="SEND NOW">
+            </form>
+        </div>
+        <script>
+            //Script here because it's not our main website and didn't want to make an extern js file
+            let submitButton = document.getElementById("submit")
+            
+            
+            const submitInfo = (event) =>{
+                event.preventDefault()
+                alert("I don't know how to get your info. I'm no IT-NEERD. Go to the gym ")
+            }
+            submitButton.addEventListener("click", submitInfo)
+        </script>
+    </body>
+</html>

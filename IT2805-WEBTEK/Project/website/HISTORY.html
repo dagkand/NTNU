@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HISTORY</title>
+      <link rel="stylesheet" href="../website/css/index.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  </head>
+  <body>
+      <h1 id="HISTORY_h1">HISTORY</h1>
+      <h3 id="h3_1">History of espionage</h3>
+      <div id="samlet1">
+        <div id="divp1">
+          <p>
+            Espionage is referred to as the act of gaining confidential information. Formerly, it was 
+            executed unorganized, however, it got professionalized in the early 20-th century. 
+            Espionage is often associated with governments spying on enemies for military purposes, 
+            whereas espionage which involves corporations is referred to as industrial espionage.
+          </p>
+        </div>
+        <div id="karusellOgPrikk">
+          <div id="bildeKarusell">
+            <a id="tilbake" onclick="bytteBilde(-1)">&#8592;</a>
+            <div class="bilde fade">
+              <img src="../website/images/history/espionage1.jpg" style="width:100%" id="img1" alt="Mystic spy">
+            </div>
+            <div class="bilde fade">
+              <img src="../website/images/history/espionage2.jpg" style="width:100%" alt="Top secret">
+            </div>
+            <div class="bilde fade">
+              <img src="../website/images/history/espionage3.jpg" style="width:100%" alt="Spy">
+            </div>
+            <div class="bilde fade">
+              <img src="../website/images/history/espionage4.jpg" style="width:100%" alt="Spy">
+            </div>
+            <div class="bilde fade">
+              <img src="../website/images/history/espionage5.jpg" style="width:100%" alt="Spy">
+            </div>
+            <a id="fremover" onclick="bytteBilde(1)">&#8594;</a>
+          </div>
+          <div id="bildeNrSomPrikk">
+            <span class="prikk" onclick="gjeldende(1)"></span>
+            <span class="prikk" onclick="gjeldende(2)"></span>
+            <span class="prikk" onclick="gjeldende(3)"></span>
+            <span class="prikk" onclick="gjeldende(4)"></span>
+            <span class="prikk" onclick="gjeldende(5)"></span>
+          </div> 
+        </div>
+      </div>
+
+      <hr id="hr">
+      <h3 id="h3_2">History of STONE</h3>
+      <div id="div2">
+        <div id="bildeKarusell2">
+          <div class="bildeAutomatisk fade">
+            <img src="../website/images/history/espionage_2_1.jpg" style="width:100%" alt="Mystic spy">
+          </div>
+          <div class="bildeAutomatisk fade">
+            <img src="../website/images/history/espionage_2_2.jpg" style="width:100%" alt="Top secret">
+          </div>
+          <div class="bildeAutomatisk fade">
+            <img src="../website/images/history/espionage_2_3.jpg" style="width:100%" alt="Spy">
+          </div>
+          <div class="bildeAutomatisk fade">
+            <img src="../website/images/history/espionage_2_4.jpg" style="width:100%" alt="Spy">
+          </div>
+          <div class="bildeAutomatisk fade">
+            <img src="../website/images/history/espionage_2_5.jpg" style="width:100%" alt="Spy">
+          </div>
+        </div>
+        <p id="p2">
+          STONE was founded in Norway in 1916, with the purpose of increasing the safety of Norway. 
+          However, the commercial possibilities associated with such an organization quickly caught 
+          the attention of STONE’s CEO, which in turn transformed STONE into a for-profit. 
+          In the following years, STONE performed numerous missions, swiftly increasing STONE’s reputation. 
+          For the sake of global safety, details of STONE’s missions cannot be published.  
+        </p>
+      </div>
+      <p id="footerblock"></p>
+      <script src="scripts/navbar-and-footer.js"></script>
+      <script src="../website/scripts/picture_popup.js"></script>
+  </body>
+</html>

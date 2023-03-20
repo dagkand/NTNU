@@ -1,0 +1,203 @@
+html{
+    background: linear-gradient(180deg, rgba(14,8,72,1) 0%, rgba(19,19,22,1) 100%);
+    font-family: 'Montserrat', sans-serif;;
+    color: #ffffff;
+}
+
+p {
+    font-size: 14pt;
+}
+#container {
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    line-height: 35px;
+    border: dotted red 10px;
+    background-color: darkblue;
+    height: 77vh;
+}
+input[type="text"]{
+    width: 50%;
+}
+
+#fake_logo{
+    width: 35px;
+    position: relative;
+
+}
+#fake_navbar{
+    z-index: 10;
+    background: rgb(14,8,72);
+    background: linear-gradient(180deg, rgba(14,8,72,1) 0%, rgba(19,19,22,1) 100%);
+    height: 80px;
+    width: 100%;    
+    position: sticky;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#fake_logo{
+    width: 35px;
+    position: relative;
+
+}
+.fake_links{
+    font-size: 24pt;
+    color: white;
+    text-decoration-line: none;
+    align-items: center;
+    position: relative;
+}
+.fake_links:hover{
+    color: #4c4545; 
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+#box2 {
+    font-size: small;
+    margin-top: 3%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    width: 300px;
+    margin: auto;
+}
+
+#anabolicDiet {
+    text-align: center;
+}
+
+#alt {
+    display: flex;
+    justify-content: center;
+}
+
+#bildeKarusell {
+    display: flex;
+    align-items: center;
+}
+
+#karusellOgPrikk {
+    width: 28vw;
+}
+
+#bildeNrSomPrikk {
+    display: flex;
+    justify-content: center;
+}
+
+.bilde {
+  display: none;
+}
+
+#tilbake {
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.5s ease;
+    user-select: none;
+    margin: 0;
+}
+
+#fremover {
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.5s ease;
+    user-select: none;
+    margin: 0;
+}
+
+.prikk {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.velg, .prikk:hover {
+  background-color: slategray;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  } 
+  /* utfører "fading" */
+  @keyframes fade {
+    0% {opacity: 0} 
+    100% {opacity: 1}
+  }
+
+
+
+/*                       Fake Store CSS Start                          */
+
+.wheyPic {
+    width: 300px;
+}
+
+.wheyDivs {
+    position: relative;
+    width: 300px;
+    display: inline-block;
+    margin: 20px;
+}
+
+#wheyMainDiv {
+    margin: auto;
+}
+
+/*                       Fake Store CSS End                          */
+
+@media only screen and (max-width: 769px){
+    .fake_links{
+        font-size: medium;
+    }
+    .fake_divRow{
+        flex-direction: column;
+    }
+    .blank_space_medium{
+        height: 200px;
+    }
+
+    .vids {
+        display: none;
+    }
+
+    #karusellOgPrikk {
+        width: 80vw;
+    }
+
+    #dagBooks {
+        width: 90vw;
+    }
+
+    #vid1 {
+        width: 95vw;
+    }
+
+    .vids {
+        display: none;
+    }
+}

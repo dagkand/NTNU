@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STONE</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="beforeSubmit">
+            <div id="agent">
+                <form id="agentForm" class="formStyle" onsubmit="onSubmit()">
+                    <div id="formPos">
+                    <!--  Pick agent       -->
+                        <div>
+                            <label>
+                                Pick your agent:
+                            </label>
+                            <select id="opt" class="innerForm db" required>
+                                <option value="">None</option>
+                                <option value="bitsAndBytes">Anonymous</option>
+                                <option value="ballerinaV">The MAN</option>
+                                <option value="tronderThunder">Tronder Thunder</option>
+                                <option value="perfumo">Perfumo</option>
+                                <option value="saxobeat">Mr. Saxobeat</option>
+                                <option value="gmaSue">Gma Sue</option>
+                            </select>
+                        </div>    
+                        <!--  Target info    -->
+                        <label style="display:block;margin-top:40px;">Target information:</label>
+                        <div id="targetIndent">
+                            <div class="targetInfo">
+                                <label class="db" >
+                                    Name:
+                                    <input type="text" class="innerForm" required>
+                                </label>
+                            </div>
+                            <div class="targetInfo">
+                                <label class="db">
+                                    Age:
+                                    <input type="number" class="innerForm" required>
+                                </label>
+                            </div>
+                            <div class="targetInfo">
+                                <label class="db">
+                                    Location:
+                                    <input type="text" class="innerForm" required>
+                                </label>
+                            </div>
+                            <div class="targetInfo">
+                                <label class="db">
+                                    Reason:
+                                    <input type="text" class="innerForm" required>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!--   Job specifications      -->
+                        <div>
+                            <label class="db">
+                                Job specifications
+                                <textarea name="bio" rows="8" cols="45" class="innerForm" style="display: block;"></textarea>
+                            </label>
+                        </div>
+                        <!--   PNG form    -->
+                        <label class="db" id="picLabel">
+                            Provide a picture of target if possible/necessary:
+                            <br>
+                            <input type="file" name="targetPic" class="formStyle" id="fileInput">
+                        </label>
+                        <!--   Submit form       -->
+                        <input type="submit" id="submit" class="formStyle">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="afterSubmit">
+            <div>
+                <img src="images/forms/secret-agent.png" alt="Secret Agent" id="agentPic">
+            </div>
+            <div id="submitText">
+                <p class="formStyle">
+                    Thank you for your submission.
+                    <br>
+                    STONE will not disappoint.
+                </p>
+               
+            </div>
+        </div>
+        <script src="scripts/navbar-and-footer.js"></script>
+        <script src="scripts/forms.js"></script>
+    </body>
+</html>
