@@ -1,0 +1,18 @@
+1. Why do mobile phones usually ignore auto play on video elements?
+	-Mobile phones usually ignore auto play on video elements due to prevent the website using data without the users permission. It also affects the quality of the work.
+
+
+2. What will the CSS snippet at the end of this section do if the visitor is browsing on a device with 320
+x 568 resolution?
+	-The only keyword, prevents older browsers from with lack of support to not apply the given styles. The CSS snippet will not run since the width of the device is not between 768 and 1024px.
+	if it would  have been ran the css would make it so that #logo id would no longer display.
+
+
+3. Mention some of the advantages of having a single responsive website instead of dedicated versions
+like m.til.no for mobile and til.no for desktop?
+	-Pros of having just a single responsive website are:
+		- Cheaper to administrate one single website.
+		- Less of a cost to promote for a singular site.
+		- One URL
+
+

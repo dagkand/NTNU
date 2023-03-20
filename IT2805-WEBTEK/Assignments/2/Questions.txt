@@ -1,0 +1,20 @@
+1. Why does inline style CSS override rules defined in style elements and external stylesheets?
+	-Inline style CSS overrides other style types since it easy to change one element, since inline css is mainly used for one case scenarios.
+	-If you tag a value as !important it will even override the inline css. 
+
+2. Give a brief example of when to use ID (#id) and when to use classes (.class) in CSS.
+	-You should use ID when you are going to use it once since each element can only have one id and each page can only have one element with that id.
+	-You should therefore use class when you want to use the style on multiple elements. You can also use multiple classes on the same element. 
+
+3. What does RGBA mean and what colors can you express with it?
+	-RGBA stands for red green blue alpha. While similar to RGB it has an alpha channel which specifies the opacity (transparency) of the color.
+	-The numbers range from 0 and 255 as an integer, the alpha element range from 0.0 (fully transparent) to 1.0 (fully opaque).
+
+4. Why do we include CSS files inside the head element and not inside the body element?
+	-We include CSS in the head element since only document content should be in the body. 
+
+
+5. What CSS selector matches all the p elements inside the article element in the following HTML?
+	- article > p  
+	- selects and styles every p element where the parent is the <article> element
+

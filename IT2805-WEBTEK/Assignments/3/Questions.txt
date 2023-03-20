@@ -1,0 +1,6 @@
+1. What is the difference between position: absolute and position: fixed?
+	-Position: absolute 
+
+2. With CSS3, how do we access the third element within another element?
+	-To access the third element within another element we can use: 
+		.parentclass:nth-child(3) {};

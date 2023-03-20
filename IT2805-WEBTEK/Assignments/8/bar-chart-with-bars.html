@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax forms: Bar chart with lines</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+  <body>
+
+    <canvas id="chart" width="1000" height="600"></canvas>
+
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      /* Draw a line from (fromX, fromY) to (toX, toY) */
+      function drawLine(fromX, fromY, toX, toY) {
+        context.beginPath();
+        context.moveTo(toX, toY );
+        context.lineTo(fromX, fromY);
+        context.stroke();
+      }
+
+      /* Draw a text (string) on (x, y) */
+      function drawText(text, x, y) {
+        context.fillStyle = 'black';
+        context.fillText(text, x, y);
+      }
+
+      /* Draw a text and with a line to its right */
+      function drawLineWithText(text, fromX, fromY, toX, toY) {
+        drawText(text, fromX - 50, fromY + 10);
+        drawLine(fromX, fromY, toX, toY);
+      }
+
+      function diagram(){
+        for (i=0; i<=10; i++){
+          drawLineWithText((1000000-(i*(100000))),100, i*60, canvas.width-200, i*60)
+          
+
+
+        }
+      }
+      function makeRect(x,y,width,height,color){
+        context.beginPath()
+        context.rect(x,y,width,height)
+        context.strokeStyle = "black"
+        context.fillStyle = color;
+        context.stroke(); //like calling up function
+        context.fill(); //if you want to use the fillStyle you have to also call up fill. 
+        context.closePath()
+
+      }
+
+      diagram();
+      makeRect(canvas.width-150,0,50,30,"red");
+      drawText("Income", canvas.width-90,20)
+      makeRect(canvas.width-150,50,50,30,"blue");
+      drawText("Wealth", canvas.width-90,70)
+
+
+    
+      for (i = 0 ;  i < taxForms.length; i++) {
+        barheight_i = taxForms[i].income/(1000000/600)
+        y_i = 600 - barheight_i
+        makeRect(125+i*250, y_i, 75, barheight_i, "red");
+        console.log(taxForms[i])
+        }
+      
+        for (i = 0 ;  i < taxForms.length; i++) {
+        barheight_w = taxForms[i].wealth/(1000000/600)
+        y_w = 600 - barheight_w
+        makeRect(225+i*250, y_w, 75, barheight_w, "blue");
+        console.log(taxForms[i])
+        }
+
+
+    </script>
+  </body>
+</html>
