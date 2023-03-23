@@ -1,4 +1,4 @@
-package Minesweeper;
+package grades;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MinesweeperApp extends Application {
+public class GradesApp extends Application {
 
     public static void main(String[] args) {
         Application.launch(args);
