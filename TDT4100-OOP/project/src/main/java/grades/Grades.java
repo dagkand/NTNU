@@ -12,7 +12,7 @@ public class Grades {
 	
 	private String course;
 	
-	private int grade;
+	private String grade;
 
 	
 	
@@ -42,16 +42,15 @@ public class Grades {
 	}
 	
 	//validering av dato for utsjekk
-	public void setGrade(int grade) {
-		LocalDate today = LocalDate.now(); 
+	public void setGrade(String grade) {
 		if (!grade.matches("^[1-6]$")) {
-				throw new IllegalArgumentException("Invalid check out date");
+				throw new IllegalArgumentException("Invalid grade");
 		}		
-		this.checkOut = checkOut;
+		this.grade = grade;
 	}
 	
-	public LocalDate getCheckOut() {
-		return checkOut;
+	public String getGrade() {
+		return grade;
 	}
 	
 	//booke nytt rom
