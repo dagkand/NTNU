@@ -1,8 +1,5 @@
 package grades;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List; 
 
@@ -12,7 +9,7 @@ public class Grades {
 	
 	private String course;
 	
-	private String grade;
+	private int grade;
 
 	
 	
@@ -43,10 +40,10 @@ public class Grades {
 	
 	//validering av dato for utsjekk
 	public void setGrade(String grade) {
-		if (!grade.matches("^[1-6]$")) {
+		if (!grade.contains("^[1-6]$")) {
 				throw new IllegalArgumentException("Invalid grade");
 		}		
-		this.grade = grade;
+		this.grade = Integer.parseInt(grade);
 	}
 	
 	public String getGrade() {
@@ -113,20 +110,5 @@ public class Grades {
 		return booking;
 	
 	}
-	
-	
-	public static void main(String[] args) {
-		Booking booking = new Booking();
-		booking.setName("Knut Knutsen");
-		booking.setEmail("knutk@ntnu.no");
-		booking.setCheckIn(LocalDate.of(2021, Month.JULY, 4));
-		booking.setCheckOut(LocalDate.of(2021, Month.JULY,10));
-		booking.addRoom(new Room("Standard"));
-		booking.addRoom(new Room("Single"));
-		booking.addRoom(new Room("Suite"));
-
-		System.out.println(booking);
-	}
-
 
 }
