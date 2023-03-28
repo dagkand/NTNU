@@ -11,6 +11,8 @@ public class Grades {
 	
 	private int grade;
 
+    private List<Grades> gradesInput = new ArrayList<>();
+
 	
 	
 	//validering av navn
