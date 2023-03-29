@@ -1,18 +1,24 @@
-package grades;
+package hotelbooking;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List; 
 
-public class Grades {
+public class Booking {
 	
 	private String name;
 	
-	private String course;
+	private String email;
 	
-	private int grade;
-
-    private List<Grades> gradesInput = new ArrayList<>();
-
+	private LocalDate checkIn;
+	
+	private LocalDate checkOut;
+	
+	private List<Room> bookedRooms = new ArrayList<>();
+	
+	private float totalPrice = 0;  
 	
 	
 	//validering av navn
@@ -27,29 +33,41 @@ public class Grades {
 		return name;
 	}
 	
-
-	//validering av dato for innsjekk
-	public void setcourse(String course) {
-		if (!course.matches("^[A-Z]{1,5}\\d{4}$")) {
-				throw new IllegalArgumentException("Invalid course name");
+	public void setEmail(String email) {
+		if (!email.matches("^(?=.{1,30}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9_-]+)*(\\.[A-Za-z]{2,})$")) {
+			throw new IllegalArgumentException("Invalid email");
 		}
-		this.course = course;			
+		this.email = email;
 	}
-
-    public String getCourse() {
-		return course;
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	//validering av dato for innsjekk
+	public void setCheckIn(LocalDate checkIn) {
+		LocalDate today = LocalDate.now(); 
+		if (checkIn == null || checkIn.isBefore(today)) {
+				throw new IllegalArgumentException("Invalid check in date");
+		}
+		this.checkIn = checkIn;			
 	}
 	
 	//validering av dato for utsjekk
-	public void setGrade(String grade) {
-		if (!grade.contains("^[1-6]$")) {
-				throw new IllegalArgumentException("Invalid grade");
+	public void setCheckOut(LocalDate checkOut) {
+		LocalDate today = LocalDate.now(); 
+		if (checkOut == null || checkOut.isBefore(today) || checkOut.isBefore(getCheckIn()) || getCheckIn().equals(checkOut)) {
+				throw new IllegalArgumentException("Invalid check out date");
 		}		
-		this.grade = Integer.parseInt(grade);
+		this.checkOut = checkOut;
 	}
 	
-	public String getGrade() {
-		return grade;
+	public LocalDate getCheckIn() {
+		return checkIn;
+	}
+	
+	public LocalDate getCheckOut() {
+		return checkOut;
 	}
 	
 	//booke nytt rom
@@ -112,5 +130,20 @@ public class Grades {
 		return booking;
 	
 	}
+	
+	
+	public static void main(String[] args) {
+		Booking booking = new Booking();
+		booking.setName("Knut Knutsen");
+		booking.setEmail("knutk@ntnu.no");
+		booking.setCheckIn(LocalDate.of(2021, Month.JULY, 4));
+		booking.setCheckOut(LocalDate.of(2021, Month.JULY,10));
+		booking.addRoom(new Room("Standard"));
+		booking.addRoom(new Room("Single"));
+		booking.addRoom(new Room("Suite"));
+
+		System.out.println(booking);
+	}
+
 
 }

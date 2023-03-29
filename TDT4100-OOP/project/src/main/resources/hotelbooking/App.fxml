@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="500.0" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotelBookingSystem.fxui.HotelBookingController">
+   <children>
+      <TextField fx:id="name" layoutX="160.0" layoutY="72.0" prefHeight="27.0" prefWidth="150.0" promptText="Forename Surname">
+         <font>
+            <Font name="Didot" size="13.0" />
+         </font></TextField>
+      <TextField fx:id="email" layoutX="160.0" layoutY="112.0" prefHeight="27.0" prefWidth="150.0" promptText="name@mail.com">
+         <font>
+            <Font name="Didot" size="13.0" />
+         </font></TextField>
+      <DatePicker fx:id="checkIn" layoutX="160.0" layoutY="152.0" prefHeight="27.0" prefWidth="150.0" promptText="Select Date" style="-fx-font: 13px Didot;" styleClass="-fx-font">
+         <cursor>
+            <Cursor fx:constant="SE_RESIZE" />
+         </cursor></DatePicker>
+      <Pane layoutX="-7.0" prefHeight="655.0" prefWidth="70.0" style="-fx-background-color: #8B008B#8B008B;" />
+      <Text layoutX="78.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" x="7.0">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#7c6c1d" layoutX="85.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Java hotel" underline="true">
+         <font>
+            <Font name="Didot" size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="85.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="40.69000244140625">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font></Text>
+      <Text layoutX="80.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check in" x="3.0">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font></Text>
+      <Text layoutX="83.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Check out">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font></Text>
+      <DatePicker fx:id="checkOut" layoutX="160.0" layoutY="192.0" prefHeight="27.0" prefWidth="150.0" promptText="Select Date" style="-fx-font: 13px Didot;" />
+      <Text layoutX="83.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rooms">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font></Text>
+      <ComboBox fx:id="room1" layoutX="82.0" layoutY="322.0" prefWidth="150.0" promptText="Room 1" style="-fx-font: 14px Didot;" visible="false" />
+      <ComboBox fx:id="room2" layoutX="82.0" layoutY="364.0" prefWidth="150.0" promptText="Room 2" style="-fx-font: 14px Didot;" visible="false" />
+      <ComboBox fx:id="room3" layoutX="252.0" layoutY="322.0" prefWidth="150.0" promptText="Room 3" style="-fx-font: 14px Didot;" visible="false" />
+      <ComboBox fx:id="room4" layoutX="252.0" layoutY="364.0" prefWidth="150.0" promptText="Room 4" style="-fx-font: 14px  Didot;" visible="false" />
+      <Text fx:id="error" fill="#ff0909" layoutX="76.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="332.28403305361417">
+         <font>
+            <Font name="Didot" size="13.0" />
+         </font></Text>
+      <ComboBox fx:id="numberOfRooms" layoutX="83.0" layoutY="275.0" onAction="#selectNumberOfRooms" prefHeight="19.0" prefWidth="57.0" promptText="0" />
+      <Text layoutX="303.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filename:">
+         <font>
+            <Font name="Didot" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="filename" layoutX="303.0" layoutY="530.0" prefHeight="27.0" prefWidth="110.0" />
+      <Button layoutX="423.0" layoutY="506.0" mnemonicParsing="false" onAction="#saveBooking" text="SAVE">
+         <font>
+            <Font name="Copperplate" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="423.0" layoutY="543.0" mnemonicParsing="false" onAction="#loadBooking" text="LOAD">
+         <font>
+            <Font name="Copperplate" size="13.0" />
+         </font>
+      </Button>
+      <Text fx:id="fileNotFoundMessage" fill="#ff2121" layoutX="300.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File not found" visible="false" wrappingWidth="120.0">
+         <font>
+            <Font name="Didot" size="13.0" />
+         </font></Text>
+      <TextArea fx:id="receipt" editable="false" layoutX="76.0" layoutY="533.0" prefHeight="114.0" prefWidth="213.0" />
+      <Text fill="#7c6c1d" layoutX="76.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your booking: ">
+         <font>
+            <Font name="Didot" size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="192.0" layoutY="425.0" mnemonicParsing="false" onAction="#newBooking" prefHeight="35.0" prefWidth="100.0" text="new booking">
+         <font>
+            <Font name="Copperplate" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="submit" layoutX="77.0" layoutY="425.0" mnemonicParsing="false" onAction="#confirmBooking" prefHeight="35.0" prefWidth="100.0" text="SUBMIT">
+         <font>
+            <Font name="Copperplate" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
