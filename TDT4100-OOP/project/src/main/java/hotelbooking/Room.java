@@ -13,7 +13,7 @@ public class Room {
 	
 	public Room(String roomType) {
 		if(!roomTypes.contains(roomType)) {
-			throw new IllegalArgumentException("Invalid type of room");
+			throw new IllegalArgumentException("Invalid type of room selected");
 		}
 		this.roomType = roomType;
 	}
@@ -32,15 +32,13 @@ public class Room {
 
 	//pris for typen rom
 	public static int getRoomPrice(String roomType) {
-		int roomPrice = switch(roomType) {
+		return switch(roomType) {
 		case "Standard" -> 800;
 		case "Single" -> 600;
 		case "Family" -> 1200;
 		case "Suite" ->  2000;
 		default -> throw new IllegalArgumentException("Invalid type of room");
 		};
-		
-		return roomPrice;
 		
 	}
 
