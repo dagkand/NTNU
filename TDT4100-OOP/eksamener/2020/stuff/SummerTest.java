@@ -14,7 +14,8 @@ public class SummerTest {
 
 	@Test
 	public void testSumMistake() {
-		// TODO: reveal mistake in sum method
+		Assert.assertEquals(0, Summer.sum(List.of()));
+        //sum function does not check if the list is empty before starting
 	}
 
 	@Test
@@ -24,7 +25,13 @@ public class SummerTest {
 
 	@Test
 	public void testDifferenceMistake() {
-		// TODO: reveal mistake in difference method
+		try {
+            Summer.difference(List.of());
+            //skal utløse unntak hvis listen er tom
+            fail("Should throw IllegalArgumentException")
+        } catch (IllegalArgumentException e) {
+            // Do nothing
+        }
 	}
 }
 
