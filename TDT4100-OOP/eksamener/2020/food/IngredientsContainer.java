@@ -2,7 +2,9 @@ package food;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Generic container of ingredients.
@@ -23,6 +25,7 @@ public class IngredientContainer implements Ingredients {
 	 * @param ingredients Initial ingredients in the container
 	 */
 	public IngredientContainer(Ingredients ingredients) {
+		addIngredients(ingredients);
 	}
 
 	/**
@@ -30,10 +33,9 @@ public class IngredientContainer implements Ingredients {
 	 *
 	 * @param ingredient The name of the ingredient to add
 	 * @param amount The amount of the ingredient to add
-	 * @throws (fitting subclass of) RuntimeException if amount cannot be removed from this
 	 */
 	public void addIngredient(String ingredient, double amount) {
-		// TODO
+		ingredientsMap.put(ingredient, ingredientsMap.get(ingredient) + amount);
 	}
 
 	/**
@@ -46,7 +48,16 @@ public class IngredientContainer implements Ingredients {
 	 * @throws IllegalArgumentException if amount cannot be removed from this
 	 */
 	public void removeIngredient(String ingredient, double amount) {
-		// TODO
+		double existingAmount = getIngredientAmount(ingredient); //hjelpe double for å korte ned på kode
+		if (amount > existingAmount) {
+			throw new IllegalArgumentException();
+		}
+		if(amount == existingAmount){
+			ingredientsMap.remove(ingredient);
+		}
+		else{
+			ingredientsMap.put(ingredient, existingAmount - amount);
+		}
 	}
 
 	/**
@@ -54,7 +65,8 @@ public class IngredientContainer implements Ingredients {
 	 */
 	@Override
 	public Iterable<String> ingredientNames() {
-		// TODO
+		return new ArrayList<>(ingredientsMap.keySet());
+		//samme som dictionary i python og si .keys
 	}
 
 	/**
@@ -62,7 +74,7 @@ public class IngredientContainer implements Ingredients {
 	 */
 	@Override
 	public Collection<String> getIngredientNames() {
-		// TODO
+		return new ArrayList<>(ingredientsMap.keySet());
 	}
 
 	/**
@@ -72,7 +84,7 @@ public class IngredientContainer implements Ingredients {
 	 */
 	@Override
 	public double getIngredientAmount(String ingredient) {
-		// TODO
+		return ingredientsMap.getOrDefault(ingredient, 0.0);
 	}
 
 	/**
@@ -88,7 +100,11 @@ public class IngredientContainer implements Ingredients {
 	 */
 	@Override
 	public String toString() {
-		// TODO
+		String out = "";
+		for (String ingredientName : ingredientsMap.keySet()) {
+			out += ingredientName + ": " + getIngredientAmount(ingredientName) + "\n"; //newline
+		}
+		return out;
 	}
 
 	/**
@@ -97,7 +113,10 @@ public class IngredientContainer implements Ingredients {
 	 * @param ingredients the ingredients to add
 	 */
 	public void addIngredients(Ingredients ingredients) {
-		// TODO
+		for (String ingredientName : ingredients.ingredientNames()) {
+			double ingredientAmount = ingredients.getIngredientAmount(ingredientName);
+			addIngredient(ingredientName, ingredientAmount);
+		}
 	}
 
 	/**
@@ -107,7 +126,22 @@ public class IngredientContainer implements Ingredients {
 	 * @throws IllegalArgumentException if this does not contain enough of any of the ingredients (without changing this)
 	 */
 	public void removeIngredients(Ingredients ingredients) {
-		// TODO
+		Map<String, Double> newIngredientsMap = new HashMap<>(ingredientsMap);
+
+		for (String ingredientName : ingredients.ingredientNames()) {
+			
+		}
+		double removeIngredientAmount = ingredients.getIngredientAmount(ingredientName);
+		double existingAmount = newIngredientsMap.getOrDefault(ingredient, 0.0);
+		if (removeIngredientAmount > existingAmount) {
+			throw new IllegalArgumentException();
+		}
+		if(removeIngredientAmount == existingAmount){
+			newIngredientsMap.remove(ingredientName);
+		}
+		else{
+			newIngredientsMap.put(ingredientName, existingAmount - removeIngredientAmount);
+		}
 	}
 
 	/**
