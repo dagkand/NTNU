@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper,oneside,titlepage]{article}
+% left to right: font size, paper size, no even/odd pages, add title page.
+
+\usepackage{amsmath}	% for some more math options 
+\usepackage{graphicx}	% for the pictures
+\usepackage{fullpage}	% for the margins
+\usepackage{framed}		% for the nice little bar next to the answers
+\usepackage{mathpazo}	% for the Palatino font (optional) 
+\usepackage{ifthen}		% for the length warning that you hopefully won't see 
+% ...add more if you want/need to
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%   This is the lab report template for TTM4135, version spring 2024   %
+% Make sure you fill in all the TODOs in this template. This template  %
+%  is an aide, but the constraints in the lab assignment are binding.  %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textsc{ \normalsize Norwegian University of Science and Technology\\
+TTM4135 Applied Cryptography and Network Security, Spring 2024}\\[0.5cm]
+\LARGE \textbf{Web Security Lab}\\
+\textbf{Group NN}}								% <-- TODO edit group number here 
+\author{Ola Nordmann \and Ola Nordmann Jr. 		% <-- TODO edit your names here 
+\and Other Student \and Their Friend}
+
+% No need to touch this part...
+\newcounter{question}
+\newcommand{\question}[2]{
+  \refstepcounter{question}
+  \begin{leftbar} 
+    \noindent \textbf{Q\arabic{question}:} #1
+  \end{leftbar}
+  \noindent \textbf{A: \hspace{.5em}} #2
+}
+
+\begin{document}
+\maketitle
+
+
+\section{Introduction}
+% TODO write a brief introduction section
+
+\section{Answers to the Questions}
+\question{Generating a symmetric key $k$ just for encrypting that one message seems like an unnecessarily complicated step. Why does GPG do that, instead of just encrypting the message with $p$?}%
+{...} % <-- TODO answer question.
+
+\question{How many bytes does PGP use to store the private signing and public verification keys for each of the two signature types?}
+{...} % <-- TODO answer question.
+\question{How many bytes does PGP use to store the signatures in each of the four cases (both long and short messages)?}
+{...} % <-- TODO answer question.
+\question{How long, on average, does PGP uses for signature generation and verification in each of the four cases?}
+{...} % <-- TODO answer question.
+\question{ Discuss your results for the above three measurements. In particular, how well do they correspond to what you expect from what was studied in the lectures?
+Include an explanation of how the different elements of the keys are stored (such as modulus, exponents, generators).}
+{...} % <-- TODO answer question.
+
+\question{
+What assurances does someone receive who downloads your public key from the server where you have uploaded it?
+What is the difference between the role of the certification authority in X509 and the key server in PGP, with regard to the security guarantees they give?
+}
+{...} % <-- TODO answer question. 
+
+
+\question{Who typically signs a software release like Apache? What do you gain by verifying such a signature?} 
+{...} % <-- TODO answer question.
+
+\question{Why did you obtain a certificate from Let's Encrypt instead of generating a self-signed one yourself?}%
+{...} % <-- TODO answer question.
+
+\question{What does Let’s Encrypt have to verify, and how do they do it, before they
+issue a certificate?}
+{...} % <-- TODO answer question.
+
+\question{What steps does your browser take when verifying the authenticity of a web page served over \texttt{https}? Give a high-level answer.}%
+{...} % <-- TODO answer question.
+
+\question{Have a look at the screenshot. What does the string \texttt{TLS\_DHE\_RSA\_WITH\_AES\_128\_CBC\_SHA} in the bottom left say about the encryption? Address all eight parts of the string.}%
+{...} % <-- TODO answer question.
+
+\question{The screenshot is obviously from a few years ago. Do you think the encryption specified by this string is still secure right now? Motivate your answer.}%
+{...} % <-- TODO answer question.
+
+\question{
+What restrictions on server TLS versions and ciphersuites are necessary in order to obtain an A rating 
+at the SSL Labs site? Why do the majority of popular web servers not implement these restrictions?}%
+{...} % <-- TODO answer question.
+
+
+\question{
+What are the values of the client and server nonces used in the handshake? How many bytes are they?  Is this what you expect from the TLS 1.2 specification?
+
+What is the value of the encrypted (pre-)master secret in the client key exchange field sent to the server? Is this the size that you would expect given the public key of your server?
+}
+%
+{...} % <-- TODO answer question.
+
+
+\question{What was the value of the (pre-)master secret in the session that you captured? Is this the size (in bytes) that you expect from the TLS specification? Explain how Task 15 shows that this session does not have forward secrecy.}
+{...} % <-- TODO answer question.
+
+\section{Discussion}
+%TODO: Talk through what you did in each part of the lab and why. Elaborate on things that went different than expected. Do you feel your implementation in part III is secure? If not, what else could you have done? 
+
+\section{References}
+% TODO add references here 
+
+\section{Appendix}
+%This section is optional.
+
+
+
+% The report should not exceed 8 pages excl. cover page. This prints a warning if needed:
+\ifthenelse{\arabic{page} > 8}{\noindent \huge \textbf{(!) This report is too long. See assignment text.}}{} 
+
+
+
+
+
+\end{document}
