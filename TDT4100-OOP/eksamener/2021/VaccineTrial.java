@@ -1,8 +1,11 @@
 package eksamen2021;
 
+import java.lang.reflect.Array;
+
 public class VaccineTrial {
  
     // Add any needed fields here
+    ArrayList<VaccineTrialVolunteer> volunteers = new ArrayList<VaccineTrialVolunteer>();
  
     /**
      * Adds a new VaccineTrialVolunteer to the trial
@@ -14,7 +17,7 @@ public class VaccineTrial {
      */
  
     public void addVolunteer(String id, boolean placebo) {
-        // TODO
+        volunteers.add(new VaccineTrialVolunteer(id, placebo));
     }
  
     /**
@@ -33,7 +36,21 @@ public class VaccineTrial {
      * @return Whether the vaccine effectiveness rate is higher than the limit
      */
     public boolean isMoreEffectiveThanLimit(double limit) {
-        ...
+        if (limit < 0 || limit > 1) {
+            throw new IllegalArgumentException("Limit must be between 0 and 1");
+        }
+        double numberOfSick = 0;
+        double numberOfSickWithVaccine = 0;
+        for (VaccineTrialVolunteer volunteer : volunteers) {
+            if (volunteer.gotSick()) {
+                numberOfSick++;
+                if (!volunteer.isPlacebo()) {
+                    numberOfSickWithVaccine++;
+                }
+            }
+        }
+        double effectiveness = 1 - (numberOfSickWithVaccine / numberOfSick);
+        return effectiveness > limit;
  
     }
  
@@ -44,7 +61,11 @@ public class VaccineTrial {
      * @throws IllegalArgumentException if there is no volunteer with the given id
      */
     public void setSick(String id) {
-        ...
+        VaccineTrialVolunteer volunteer = getVolunteer(id);
+        if (volunteer == null) {
+            throw new IllegalArgumentException("No volunteer with id " + id);
+        }
+        volunteer.setGotSick(true);
     }
  
     /**
@@ -56,7 +77,12 @@ public class VaccineTrial {
      *         for any volunteer, return null
      */
     public VaccineTrialVolunteer getVolunteer(String id) {
-        ...
+        for (VaccineTrialVolunteer volunteer : volunteers) {
+            if (volunteer.getId().equals(id)) {
+                return volunteer;
+            }
+        }
+        return null;
     }
  
 }
