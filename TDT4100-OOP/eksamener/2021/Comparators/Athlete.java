@@ -25,4 +25,7 @@ public class Athlete {
         return name;
     }
  
+    public String toString() {
+        return name + " from " + country + " has " + medals.size() + " medals";
+    }
 }

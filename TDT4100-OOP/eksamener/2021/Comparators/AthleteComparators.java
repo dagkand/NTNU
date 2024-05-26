@@ -24,6 +24,15 @@ public class AthleteComparators {
      *          The spelling and order of the medals can be seen in the list validMetals in the Medal class.
      */
     public static Comparator<Athlete> getAdvancedComparator() {
-        ...
-    }
+        return (athlete1, athlete2) -> {
+            for (string metal : Medal.validMetals) {
+                int numberOfMedalsAthlete1 = (int) athlete1.getMedals().stream().filter(medal -> medal.getMetal().equals(metal)).count();
+                int numberOfMedalsAthlete2 = (int) athlete2.getMedals().stream().filter(medal -> medal.getMetal().equals(metal)).count();
+                if (numberOfMedalsAthlete1 != numberOfMedalsAthlete2) {
+                    return numberOfMedalsAthlete2 - numberOfMedalsAthlete1;
+                }
+            }
+        }
+        return athlete1.getName().compareTo(athlete2.getName());
+    };
 }
